@@ -7,6 +7,18 @@ init -990 python in mas_submod_utils:
         settings_pane="expandedmusic_settings_main"
     )
 
+init -989 python in gsm_utils:
+    import store
+
+    #Register the updater if needed
+    if store.mas_submod_utils.isSubmodInstalled("Submod Updater Plugin"):
+        store.sup_utils.SubmodUpdater(
+            submod="Expanded Music",
+            user_name="GeoffCopuc",
+            repository_name="MAS-Submod-Expanded-Music",
+            update_dir=""
+        )
+
 default persistent._ms_enabled_songs = [
     "playwithme_var6",
     "sayo_nara"
