@@ -3,7 +3,7 @@ init -990 python in mas_submod_utils:
         author="Geoff Copuc",
         name="Expanded Music",
         description="Inserts more music from the original game and DDLC+ into the music menu and allows Monika to choose music herself.",
-        version="1.5.0",
+        version="0.5.0",
         settings_pane="expandedmusic_settings_main"
     )
 
@@ -18,6 +18,8 @@ init -989 python in gsm_utils:
             repository_name="MAS-Submod-Expanded-Music",
             update_dir=""
         )
+
+
 
 default persistent._ms_enabled_songs = [
     "playwithme_var6",
@@ -56,6 +58,8 @@ screen expandedmusic_settings_additional():
     
     frame:
         vbox:
+            spacing 10
+
             hbox:
                 style_prefix "generic_fancy_check"
                 spacing 5
@@ -73,47 +77,47 @@ screen expandedmusic_settings_additional():
                             Function(store.songs.initMusicChoices, store.mas_egg_manager.sayori_enabled())
                         ]
             
-            text _("Bonus tracks:")
-            hbox:
-                style_prefix "generic_fancy_check"
-                ypos 10
-                spacing 5
-                
-                textbutton _("Poems Are Forever"):
-                    action [
-                        ToggleSetMembership(persistent._ms_enabled_songs, "poems_forever"),
-                        Function(store.songs.initMusicChoices, store.mas_egg_manager.sayori_enabled())
-                    ]
-                
-                textbutton _("Doki Doki"):
-                    action [
-                        ToggleSetMembership(persistent._ms_enabled_songs, "doki_doki"),
-                        Function(store.songs.initMusicChoices, store.mas_egg_manager.sayori_enabled())
-                    ]
+            vbox:
+                text _("Bonus tracks:")
+                hbox:
+                    style_prefix "generic_fancy_check"
+                    spacing 5
+                    
+                    textbutton _("Poems Are Forever"):
+                        action [
+                            ToggleSetMembership(persistent._ms_enabled_songs, "poems_forever"),
+                            Function(store.songs.initMusicChoices, store.mas_egg_manager.sayori_enabled())
+                        ]
+                    
+                    textbutton _("Doki Doki"):
+                        action [
+                            ToggleSetMembership(persistent._ms_enabled_songs, "doki_doki"),
+                            Function(store.songs.initMusicChoices, store.mas_egg_manager.sayori_enabled())
+                        ]
             
-            text _("Doki Doki Literature Club Plus!:")
-            hbox:
-                style_prefix "generic_fancy_check"
-                ypos 10
-                spacing 5
-                
-                textbutton _("OST"):
-                    action [
-                        ToggleSetMembership(persistent._ms_enabled_songs, "ddlc_plus"),
-                        Function(store.songs.initMusicChoices, store.mas_egg_manager.sayori_enabled())
-                    ]
-                
-                textbutton _("Dear Sunshine"):
-                    action [
-                        ToggleSetMembership(persistent._ms_enabled_songs, "dear_sunshine"),
-                        Function(store.songs.initMusicChoices, store.mas_egg_manager.sayori_enabled())
-                    ]
-                
-                textbutton _("Candy Hearts"):
-                    action [
-                        ToggleSetMembership(persistent._ms_enabled_songs, "candy_hearts"),
-                        Function(store.songs.initMusicChoices, store.mas_egg_manager.sayori_enabled())
-                    ]
+            vbox:
+                text _("Doki Doki Literature Club Plus!:")
+                hbox:
+                    style_prefix "generic_fancy_check"
+                    spacing 5
+                    
+                    textbutton _("OST"):
+                        action [
+                            ToggleSetMembership(persistent._ms_enabled_songs, "ddlc_plus"),
+                            Function(store.songs.initMusicChoices, store.mas_egg_manager.sayori_enabled())
+                        ]
+                    
+                    textbutton _("Dear Sunshine"):
+                        action [
+                            ToggleSetMembership(persistent._ms_enabled_songs, "dear_sunshine"),
+                            Function(store.songs.initMusicChoices, store.mas_egg_manager.sayori_enabled())
+                        ]
+                    
+                    textbutton _("Candy Hearts"):
+                        action [
+                            ToggleSetMembership(persistent._ms_enabled_songs, "candy_hearts"),
+                            Function(store.songs.initMusicChoices, store.mas_egg_manager.sayori_enabled())
+                        ]
             
             textbutton _("Back"):
                 selected False
