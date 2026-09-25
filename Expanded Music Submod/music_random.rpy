@@ -90,7 +90,7 @@ label mas_expandedmusic_choose_song:
             _("This one!"),
             _("I like this song~")
         ]
-        music_quip = renpy.random.choice(music_quips)
+        music_quip = renpy.substitute(renpy.random.choice(music_quips))
     
     m 3eub "[music_quip]"
     return
