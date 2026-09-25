@@ -2,15 +2,12 @@ init -990 python in mas_submod_utils:
     Submod(
         author="Geoff Copuc",
         name="Expanded Music",
-        description="Inserts more music from the original game and DDLC+ into the music menu and allows Monika to choose music herself.",
+        description="Inserts more music from the original game and DDLC+ into the music menu and allows Monika to choose the music herself.",
         version="0.2.1",
         settings_pane="expandedmusic_settings_main"
     )
 
-init -989 python in gsm_utils:
-    import store
-
-    #Register the updater if needed
+init -989 python:
     if store.mas_submod_utils.isSubmodInstalled("Submod Updater Plugin"):
         store.sup_utils.SubmodUpdater(
             submod="Expanded Music",
