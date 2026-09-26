@@ -13,7 +13,8 @@ init -989 python:
             submod="Expanded Music",
             user_name="GeoffCopuc",
             repository_name="MAS-Submod-Expanded-Music",
-            update_dir=""
+            update_dir="",
+            attachment_id=None
         )
 
 
