@@ -3,7 +3,7 @@ init -990 python in mas_submod_utils:
         author="Geoff Copuc",
         name="Expanded Music",
         description="Inserts more music from the original game and DDLC+ into the music menu and allows Monika to choose the music herself.",
-        version="0.2.1",
+        version="0.2.2",
         settings_pane="expandedmusic_settings_main"
     )
 
@@ -12,9 +12,7 @@ init -989 python:
         store.sup_utils.SubmodUpdater(
             submod="Expanded Music",
             user_name="GeoffCopuc",
-            repository_name="MAS-Submod-Expanded-Music",
-            update_dir="",
-            attachment_id=0
+            repository_name="MAS-Submod-Expanded-Music"
         )
 
 
